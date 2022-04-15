@@ -1,0 +1,631 @@
+*{
+    font-family: 'Poppins', sans-serif ;
+}
+p{
+    font-family:"Open Sans", sans-serif ;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* section home */
+#home{
+    position: relative;
+}
+/* navbar property */
+nav{
+    width: 100%;
+    position: fixed !important;
+    top: 0;
+    z-index: 1111111;
+    padding: 10px 0 !important;
+    background-color: white;
+}
+
+.navbar-toggler{
+    border: none;
+}
+.bar-icon{
+    border: none;
+    color: black;
+    font-size: 22px;
+}
+.bar-icon:hover{
+    color: #f25454;
+}
+/* anchor color ,hover ,actve ,focus */
+.navbar-light .navbar-nav .nav-link,.navbar-nav .active{
+    color:#282828;
+    font-size: 13px ;
+    font-weight: 500 ;
+    letter-spacing: 0.5 ;
+    word-spacing: 0 ;
+    line-height: 25px ;
+
+}
+.navbar-light .navbar-nav .nav-link:focus ,.navbar-nav .active>.nav-link ,.nav-link:hover{
+    color: #f25454 !important;
+}
+nav .nav-icon i{
+    color: #282828;
+    font-size: 14px;
+}
+nav .nav-icon i:hover{
+    color:#f25454 ;
+}
+/* silder background-img */
+.img-heading1,.img-heading2,.img-heading3{
+    height: 100vh;
+    background-size: cover;
+    background-position:center ; 
+}
+.img-heading1{
+    background-image: url(../images/slideshow-1.jpg);
+}
+.img-heading2{
+    background-image: url(../images/slideshow-2.jpg);
+}
+.img-heading3{
+    background-image: url(../images/slideshow-3.jpg);
+}
+/* the header of slider position and style  */
+header{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+}
+header h1,header h2{
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: white;      
+}
+/* left right slider arrow position and style  */
+.arrow1 ,.arrow2{
+    color: white;
+    font-size: 16px !important;
+    border: 1px solid white;
+    padding: 15px 20px 15px 20px;
+    border-radius:5px ;
+    position: absolute;
+    left: -5;
+    transform: translateY(-50vh);
+    transition: all .5s;
+}
+.arrow1{
+    bottom: -100%;
+}
+.arrow1::after ,.arrow2::after{
+    content: "";
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius:4px ;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: all .5s;
+}
+.arrow1:hover::after ,.arrow2:hover::after{
+    left: 0; 
+    z-index: -1;
+}
+.arrow1:hover,.arrow2:hover{
+    color: #f38383;
+}
+/* mouse scroll */
+.mouse-scroll{
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 1px;
+    padding: 15px 12px;
+    transform: translateX(49vw);
+    position: absolute;
+    bottom:30;
+}
+.mouse-scroll i{
+    color: white;
+    font-size: 8px;
+    animation-name:scroll;
+    animation-duration: 2.5s;
+    position: relative;
+    animation-iteration-count: infinite;
+
+}
+.mouse-scroll:hover,.mouse-scroll:hover i{
+    color: #f25454;
+    border-color: #f25454;
+}
+@keyframes scroll{
+    0%{top: -7px;opacity: .1;}
+    25%{opacity: 1;}
+    50%{top: 7px;opacity: .1;}
+    75%{opacity: 1;}
+    100%{top: -7px;opacity: .1;}
+}
+ /* header style icon  */
+.header-style i{
+    color: white;
+    background-color: rgba(0, 0, 0 ,.8);
+    padding: 15px 10px;
+    font-size: 1rem;
+}
+.header-style {
+    position: fixed ;
+    left: 0;
+    top: 25%;
+}
+/* End of section home */
+
+/* section about */
+#about{
+    font-size:14px ;
+    font-weight:400;
+    color: #666666;
+}
+/* this property shared for all header  */
+.heading h2{
+    font-family: 'Poppins', sans-serif ;
+    font-size: 40px;
+    color:rgb(30, 30, 30) ;
+    font-weight: 700;
+    word-spacing: 0;
+}
+.heading h2{
+    position: relative;
+    display: inline-block ;
+}
+.heading h2::before{
+    content: "A";
+    font-size: 5rem;
+    color: rgba(100, 98, 98, 0.1);
+    position: absolute;
+    transform: translateX(100%);
+    bottom: -25%;
+    z-index: 2;
+}
+.heading h2::after{
+    content:"";
+    width: 26%;
+    height: 1px;
+    background-color:rgb(30, 30, 30) ;
+    position:absolute;
+    bottom:-20;
+    left:37%;
+    transition: all .5s;
+}
+.heading:hover h2::after{
+    width: 50%;
+    left:25%;
+
+}
+.heading p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #999999;
+}
+/* process par  */
+/* divided it to p have after precent process bar and before precent precentge */
+.bar p{
+    font-size: 14px;
+    color: #444444;
+    font-weight: 600;
+    margin-bottom:6%;
+}
+.bar p{
+    position: relative;
+}
+.bar p::after{
+    content: "" !important;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    position:absolute;
+    left: 0 !important; 
+    bottom:-10;
+}
+.bar p::before{
+    content:"";
+    position:absolute;
+    background: transparent !important;
+    right: 0;
+    bottom:-5;
+}
+.bar .p1::before,.bar .p1::after{
+    background:linear-gradient( 90deg,#f25454 80%,#c8c8c8 80%);
+    left: 75%;
+    content: "80%";
+}
+.bar .p2::before,.bar .p2::after{
+    background:linear-gradient( 90deg,#f25454 95%,#c8c8c8 95%);
+    left: 90%;
+    content: "95%";
+
+}
+.bar .p3::before,.bar .p3::after{
+    background:linear-gradient( 90deg,#f25454 85%,#c8c8c8 85%);
+    left: 80%;
+    content: "85%";
+
+}
+.bar .p4::before,.bar .p4::after{
+    background:linear-gradient( 90deg,#f25454 75%,#c8c8c8 75%);
+    left: 70%;
+    content: "75%";
+
+}
+/* end of section about  */
+
+/* section team  */
+#team .heading h2::before{
+    content: "O";
+}
+.img-container{
+    position: relative;
+    overflow: hidden;
+}
+.contact-container{
+    background-color: rgba(242, 84, 84,.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .5s;
+}
+.contact-container i{
+    font-size: 16px;
+}
+.team-container:hover h5 ,.team-container:hover .contact-container{
+    color:  rgb(242, 84, 84);
+    opacity: 1;
+}
+.img-container img{
+    transition: all 1s;
+    }
+.team-container:hover .img-container img{
+    transform: scale(1.1);
+}
+.team-container h5{
+    font-size: 16px; 
+    font-weight: 600;
+    color: #282828;
+}
+.team-container p{
+    font-size: 14px; 
+    font-weight: 400;
+    color: #666666;
+}
+#ateam h3{
+    font-size: 32px;
+    font-weight: 400;
+    color:#282828;
+    line-height:50px ;
+}
+.page-button{
+    background-color: #f25454;
+    color: white;
+    padding:15px 30px ;
+    font-size: 14px;
+    font-weight: 600;
+    font-family:"Open Sans", sans-serif ;
+}
+.page-button:hover{
+    background-color: #ee8e8e;
+    color: white;
+}
+.page-button:focus {
+    box-shadow: none;
+}
+/* section services  */
+#services .heading h2::before{
+    content: "S";
+}
+.bg-light-gray{
+    background-color:#fafafa !important;
+}
+.page-color{
+    color: #f25454;
+}
+#services i{
+    font-size: 26px;
+    background-color: transparent;
+}
+#services h3{
+    font-size:18px;
+    font-weight: 500;
+    color: #282828;
+    line-height: 32px;
+}
+#services p{
+    font-size:14px;
+    font-weight:400;
+    color: #666666;
+}
+
+
+/* client section  */
+#client .heading h2::before{
+    content: "C";
+    transform: translateX(150%);
+}
+#client .carousel{
+    padding: 2rem 0 5rem;
+}
+#client .carousel-indicators li
+{  
+    box-sizing: content-box;
+    width:auto !important;
+    height: auto !important;
+    margin:0px 7px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+.test{
+    width: 130px !important;
+    height: 130px !important; 
+    border-radius: 50% !important;
+    background-size: cover;
+    background-position: center;
+}
+.test-carousel{
+    width: 150px !important;
+    height: 150px !important; 
+    border-radius: 50% !important;
+    box-shadow:  0 0 2px #f25454;
+    background-size: cover;
+    background-position: center;
+}
+.carousel-width{
+    margin:auto;
+    width: 100% !important;
+    display: flex !important;
+    flex-flow:  row ;
+    bottom: 60% !important;
+}
+#client .carousel-item .apper{
+    position: relative !important;
+    opacity: 1 !important;
+    z-index: 111 !important;
+}
+#client .carousel-inner{
+    overflow: visible;
+    width: 75%;
+    bottom :65;
+}
+#client .carousel-caption{
+    position: absolute;
+    height: 15%;
+    bottom: -20% !important;
+    background-color: #ffffff !important;
+}
+#client .carousel-caption h5{   
+color:#282828 !important;
+font-size: 18px;
+font-weight: 500;
+
+}
+#client .carousel-caption p{
+color:#666666 !important ;
+font-size: 14px;
+font-weight: 400;
+}
+#client .carousel-caption .informatoin p{
+    font-size: 22   px;
+    font-weight: 400;
+    color:#666666 !important ;
+
+}
+#client .carousel-indicators .active{
+   display: none !important;
+   opacity: 1;
+} 
+
+.test1-container{
+    background-image: url("../images/client-1.png");
+}
+.test2-container{
+    background-image: url("../images/client-2.png");
+}
+.test3-container{
+    background-image: url("../images/client-3.png");
+}
+.test4-container{
+    background-image: url("../images/client-4.png");
+}
+.test5-container{
+    background-image: url("../images/client-5.png");
+}
+.test6-container{
+    background-image: url("../images/client-6.png");
+}
+.test7-container{
+    background-image: url("../images/client-7.png");
+}
+.test8-container{
+    background-image: url("../images/client-8.png");
+}
+
+
+/* touch section  */
+#touch .heading h2::before{
+    content: "G";
+    transform: translateX(150%);
+}
+#touch i{
+    font-size: 38px;
+}
+#touch .divid
+{
+    width: 95%;
+    height: 1px;
+    margin: 20px auto;
+    background-color: rgba(102, 102, 102,.3);
+}
+#touch h3{
+    font-size:32px;
+    font-weight: 600;
+    text-decoration:none solid rgb(40, 40, 40);
+    color: #282828;
+    line-height: 32px;
+}
+#touch .info:hover h4{
+    color: #f25454;
+}
+#touch h4{
+    font-size:18px;
+    font-weight: 500;
+    text-decoration:none solid rgb(40, 40, 40);
+    color: #282828;
+}
+#touch p{   
+    font-size:14px;
+    font-weight: 300;
+    color: #999999;
+    margin-bottom: 0 !important;
+}
+#touch .form-control{
+    margin: 20px 0;
+    padding: 25px 0;
+    font-family: "Open Sans", sans-serif;
+    font-size:14px !important;
+    font-weight: 400 !important;
+    color: #a6a6a6 !important;
+    border: 2px solid rgb(241, 238, 238);
+    background-color: white;
+
+}
+#touch .form-control:focus{
+    box-shadow: none;
+    outline-color: none;
+    border: 2px solid #f25454;
+}
+#touch .page-button{
+    padding: 15px 35px;
+}
+#touch .page-button i {
+font-size: 15px;
+padding-right:5px ;
+}
+/* contact section  */
+
+#contact{
+    background-color: #222222;
+}
+.conclusion{
+    background-image: url(../images/dotted-map.png);
+    background-size:auto 100%;
+    background-position: bottom;
+}
+#contact h5{
+    color: #ffffff;
+    font-size:20px ;
+    font-weight:500 ;
+
+}
+#contact p{
+    color: #b0b0b0;
+    font-size:14px ;
+    font-weight:400 ;
+    line-height: 25px;
+    
+}
+.list-group-item{
+    background-color: transparent;
+    border: none;
+    padding: 4px 0px !important;
+}
+#contact a{
+    font-size: 14px !important;
+    color:#b0b0b0;
+    font-weight:300 !important ;
+}
+#contact .con-btn{
+    margin: 3px 0;
+    font-size: 13px !important;
+    border: 1px solid #b0b0b0;
+    box-shadow: none;
+    font-weight:100 !important ;
+
+}
+#contact .con-btn:hover ,#contact a:hover{
+    color: #f25454;
+    border-color: #f25454;
+    text-decoration: none;
+}
+footer{
+    background-color: rgba(0, 0, 0 ,.3);
+}
+#contact footer i{
+    background-color: transparent !important;
+    font-size: 16px !important;
+    color:white !important;
+}
+#contact footer i:hover{
+    color: #f25454 !important;
+    background-color: white;
+}
+.up-arrow i{
+    background-color:rgba(242, 84, 84,.5) ;
+    color: white;
+    font-size: 25px;
+    padding: 15px 20px;
+    border-radius: 50%;
+}
+.up-arrow a{
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
+}
+.up-arrow i:hover{
+    background-color:rgb(242, 84, 84) ;
+}
+
+@media screen and (max-width:991px){
+    .test{
+        width: 95px !important;
+        height: 95px !important; 
+    }
+    .test-carousel{
+        width: 110px !important;
+        height: 110px !important; 
+    }
+    #client .carousel-inner{
+        bottom :45;
+    }
+}
+@media screen and (max-width:768px){
+    .test{
+        width: 70px !important;
+        height: 70px !important; 
+    }
+    .test-carousel{
+        width: 90px !important;
+        height: 90px !important; 
+    }
+    #client .carousel-inner{
+        bottom :30;
+    }
+}
+@media screen and (max-width:576px){
+    nav .container{
+        width: 95%;
+    }
+    .test{
+        width: 55px !important;
+        height: 55px !important; 
+    }
+    .test-carousel{
+        width: 70px !important;
+        height: 70px !important; 
+    }
+    #client .carousel-inner{
+        bottom :25;
+    }
+    #client .carousel-caption{
+        bottom: -30% !important;
+    }
+}
